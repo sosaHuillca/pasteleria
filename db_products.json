@@ -1,0 +1,31 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "chifon de naranja",
+      "precio": 19.50,
+      "imagen": "https://cdn.pixabay.com/photo/2014/02/17/15/25/bun-268237_960_720.jpg",
+      "descripcion": "Chifón de naranja es un postre ligero y esponjoso con un sabor refrescante a naranja. Esta delicia se caracteriza por su textura suave y aireada, similar a un bizcocho, pero con un toque cítrico distintivo. El chifón de naranja suele elaborarse con ingredientes como harina, azúcar, huevos, jugo de naranja, ralladura de naranja y aceite vegetal, lo que le confiere su aroma y sabor característicos. Es un postre perfecto para disfrutar en cualquier ocasión, ya sea como postre después de una comida o acompañado de una taza de té o café",
+      "categoria": "keke",
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "rosquita de anis",
+      "precio": 1.00,
+      "imagen": "https://cdn.pixabay.com/photo/2020/03/25/11/24/food-4966937_960_720.jpg",
+      "descripcion": "Deliciosa rosquita con sabor a anís, perfecta para acompañar un café o té. Su textura es crujiente por fuera y suave por dentro, y su aroma a anís le da un toque único y reconfortante.",
+      "categoria": "bocadito",
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "pay de manzana",
+      "precio": 11.99,
+      "imagen": "https://cdn.pixabay.com/photo/2016/05/13/16/37/muffin-1390368_960_720.jpg",
+    "descripcion": "El pay de manzana es un postre clásico que consiste en una base de masa quebrada o masa de hojaldre, rellena con una mezcla de manzanas cortadas en rodajas finas y sazonadas con canela, azúcar y a veces pasas. Se hornea hasta que la masa esté dorada y crujiente, y las manzanas estén tiernas y caramelizadas. Es un postre delicioso y reconfortante, perfecto para disfrutar en cualquier ocasión.",
+      "categoria": "postre",
+      "disponible": true
+    }
+  ]
+}
