@@ -55,7 +55,8 @@ window.customElements.define('boton-agregar', class Element extends HTMLElement 
 
             }
 
-            updateCart()
+            const storageLength = JSON.parse(localStorage.getItem('canasta')) || [];
+            document.querySelector("boton-basket").setAttribute("count",storageLength.length)
           })
   });
     }
