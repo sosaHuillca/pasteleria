@@ -26,6 +26,17 @@
     "descripcion": "El pay de manzana es un postre clásico que consiste en una base de masa quebrada o masa de hojaldre, rellena con una mezcla de manzanas cortadas en rodajas finas y sazonadas con canela, azúcar y a veces pasas. Se hornea hasta que la masa esté dorada y crujiente, y las manzanas estén tiernas y caramelizadas. Es un postre delicioso y reconfortante, perfecto para disfrutar en cualquier ocasión.",
       "categoria": "postre",
       "disponible": true
+    },
+    {
+      "id": 4,
+      "nombre": "torta tres leches",
+      "precio": 21.99,
+      "imagen": "https://cdn.pixabay.com/photo/2019/04/16/02/33/cake-4130766_960_720.jpg",
+    "descripcion": "El pay de manzana es un postre clásico que consiste en una base de masa quebrada o masa de hojaldre, rellena con una mezcla de manzanas cortadas en rodajas finas y sazonadas con canela, azúcar y a veces pasas. Se hornea hasta que la masa esté dorada y crujiente, y las manzanas estén tiernas y caramelizadas. Es un postre delicioso y reconfortante, perfecto para disfrutar en cualquier ocasión.",
+      "categoria": "torta",
+      "disponible": true
     }
+
+
   ]
 }
