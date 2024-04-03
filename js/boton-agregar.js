@@ -18,7 +18,7 @@ window.customElements.define('boton-agregar', class Element extends HTMLElement 
         background-color: darkorange;
       }
       </style>
-      <button>+</button>
+      <button>agregar</button>
       `;
   this.shadowRoot.querySelector('button').addEventListener('click',e=>{
         fetch('./js/db_products.json')

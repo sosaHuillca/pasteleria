@@ -66,13 +66,9 @@ function esDispositivoMovil() {
       this.shadowRoot.querySelector('a').style.display="block"
       //this.shadowRoot.querySelector('a').setAttribute("href","whatsapp://send?phone=+51990103105&text="+url+"%0A"+Math.floor(total.toFixed(2)));
 if (esDispositivoMovil()) {
-    // Si es un dispositivo móvil
-    alert("Estás accediendo desde un dispositivo móvil.");
       this.shadowRoot.querySelector('a').setAttribute("href","whatsapp://send?phone=+51990103105&text="+url+"%0A"+total.toFixed(2));
     // Aquí puedes ejecutar la acción que desees para dispositivos móviles
 } else {
-    // Si es un escritorio
-    console.log("Estás accediendo desde un escritorio.");
     // Aquí puedes ejecutar la acción que desees para escritorios
       this.shadowRoot.querySelector('a').setAttribute("href","https://wa.me/+51990103105?text="+url+"%0A"+total.toFixed(2));
 }

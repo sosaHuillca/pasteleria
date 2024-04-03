@@ -22,7 +22,7 @@ window.customElements.define('product-details', class Element extends HTMLElemen
   height:100vh;
   background-color: darkorange;
   display: grid;
-  place-content:center;
+  align-content:start;
   top:0;
   left:0;
 
@@ -35,28 +35,32 @@ img{ width:100%; }
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto max-content auto;
+  grid-template-rows: repeat(5,auto);
   background-color: darkorange;
-  border-radius: .6rem;
   overflow: hidden;
 }
-.layout-product img{
-    grid-column: 1/-1;
-    height:6rem;
-}
+.layout-product img{ grid-column: 1/-1 }
 
 .layout-product h3{
   grid-column: 1/-1;
   grid-row: 2/3;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size:1rem;
-  margin-left:.9rem;
+  font-size:2rem;
 }
 
 .layout-product span{
-  margin-left:.9rem;
-  align-self:center;
+}
+#precio{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+#precio{
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.layout-product p{
+  grid-column: 1/-1;
+  grid-row: 4/5;
 }
 
 .layout-product button{
@@ -64,17 +68,15 @@ img{ width:100%; }
   border:none;
   background: var(--cl-primary);
 
-  width: 40px;
-  height: 40px;
-  font-size: 3rem;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center; 
   color:var(--cl-secundary);
+  position: absolute;
 
-  margin-bottom: 5px;
-  margin-right: 5px;
-  justify-self: end;
 }
 
 .search-icon{
@@ -84,12 +86,12 @@ img{ width:100%; }
   left: 4.5rem;
 }
     </style>
-    <section class="" id="${this.id}">
+    <section class="layout-product" id="${this.id}">
       <button class="quitar">X</button>
       <img src="${this.imagen}" />
       <h3>${this.nombre}</h3>
-      <span>${this.precio}</span>
-      <span>${this.categoria}</span>
+      <span id="precio">Precio: ${this.precio}</span>
+      <span id="categoria">Categoria: ${this.categoria}</span>
       <p>${this.descripcion}</p>
       <boton-agregar data-id="${this.id} "class="agregar">+</boton-agregar>
     </section>

@@ -30,21 +30,3 @@ window.addEventListener("DOMContentLoaded",()=>{
     const storageLength = JSON.parse(localStorage.getItem('canasta')) || [];
     document.querySelector("boton-basket").setAttribute("count",storageLength.length)
 })
-
-// Función para detectar si es un dispositivo móvil
-function esDispositivoMovil() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-// Uso de la función para ejecutar una acción
-if (esDispositivoMovil()) {
-    // Si es un dispositivo móvil
-    alert("Estás accediendo desde un dispositivo móvil.");
-    // Aquí puedes ejecutar la acción que desees para dispositivos móviles
-} else {
-    // Si es un escritorio
-    console.log("Estás accediendo desde un escritorio.");
-    // Aquí puedes ejecutar la acción que desees para escritorios
-}
-
-
