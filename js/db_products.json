@@ -35,7 +35,50 @@
     "descripcion": "El pay de manzana es un postre clásico que consiste en una base de masa quebrada o masa de hojaldre, rellena con una mezcla de manzanas cortadas en rodajas finas y sazonadas con canela, azúcar y a veces pasas. Se hornea hasta que la masa esté dorada y crujiente, y las manzanas estén tiernas y caramelizadas. Es un postre delicioso y reconfortante, perfecto para disfrutar en cualquier ocasión.",
       "categoria": "torta",
       "disponible": true
+    },
+    {
+      "id": 5,
+      "nombre": "alfajor de maicena",
+      "precio": 1.99,
+      "imagen": "https://cdn.pixabay.com/photo/2017/06/21/02/27/dessert-2425769_960_720.jpg",
+    "descripcion": "Entra en el mundo de los alfajores y descubre una experiencia de sabor que nunca olvidarás. Con su irresistible combinación de texturas y sabores, estos dulces son mucho más que un simple bocado: son una verdadera obra maestra culinaria que merece ser disfrutada al máximo. ¡No esperes más y hazte con tus alfajores favoritos hoy mismo!",
+      "categoria": "postre",
+      "disponible": true
+    },
+    {
+      "id": 6,
+      "nombre": "mil hojas",
+      "precio": 2.99,
+      "imagen": "https://imgmedia.buenazo.pe/1200x660/buenazo/original/2021/06/28/60d9ed6316b9b76817715bef.jpg",
+    "descripcion": "El mil hojas es una exquisita tentación de repostería que seduce con su delicada y crujiente masa hojaldrada, rellena de cremosa crema pastelera y coronada con una capa de azúcar glas. Cada bocado es un equilibrio perfecto entre texturas y sabores, creando una experiencia gustativa inolvidable. Su elegancia y sofisticación lo convierten en el postre ideal para deleitar los sentidos en cualquier ocasión especial.",
+      "categoria": "postre",
+      "disponible": true
+    },
+    {
+      "id": 7,
+      "nombre": "keke vainilla",
+      "precio": 15.99,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi0sRI9jLJBoMPszPbkgr5y37rtJLDJo1uidBAi2xl0w&s",
+    "descripcion": "El keke de vainilla es un placer simple y reconfortante que evoca recuerdos de hogar y momentos compartidos. Con su aroma tentador y su suave textura, este delicioso bizcocho se deshace en la boca, revelando el sutil sabor de la vainilla en cada bocado. Perfecto para acompañar una taza de té caliente o disfrutar como postre después de una comida, el keke de vainilla es un clásico atemporal que siempre deja una sonrisa en los labios.",
+      "categoria": "keke",
+      "disponible": true
+    },
+    {
+      "id": 8,
+      "nombre": "leche asada",
+      "precio": 1.99,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAqn8sW9pQ5t879lNnvmuLTFZz-Nc1KGRb6iRoCNK8Q&s",
+    "descripcion": "La leche asada es un postre tradicional que deleita con su suave textura cremosa y su sabor delicadamente dulce. Preparada con una mezcla de leche, azúcar y huevos, esta delicia se cuece lentamente al horno hasta alcanzar una consistencia firme y dorada en la superficie. Cada porción es un placer reconfortante que evoca recuerdos de hogar y celebración. Ideal para aquellos que buscan un dulce reconfortante con un toque de nostalgia.",
+      "categoria": "postre",
+      "disponible": true
     }
+
+
+
+
+
+
+
 
 
   ]
