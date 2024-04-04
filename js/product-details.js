@@ -23,7 +23,7 @@ window.customElements.define('product-details', class Element extends HTMLElemen
   background-color: darkorange;
   display: grid;
   align-content:start;
-  top:0;
+  top:3.3rem;
   left:0;
 
 }

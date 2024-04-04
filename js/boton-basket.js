@@ -36,56 +36,97 @@ window.customElements.define('boton-basket', class Element extends HTMLElement {
 
       <div>
         <button class="cerrar-modal">x</button>
-        <section></section>
+        <table>
+        <thead>
+          <tr>
+            <th>nombre</th>
+            <th>precio unitario</th>
+            <th>cantidad</th>
+            <th>total</th>
+          </tr>
+        </thead>
+          <tbody>
+          </tbody>
+        </table>
         <a href="#">enviar</a>
+        <button class="borrar">eliminar lista</button>
       </div>
       `;
     }
 
     connectedCallback(){
-  this.shadowRoot.querySelector('svg').addEventListener('click',e=>{
-    this.shadowRoot.querySelector('div').classList.toggle("modal")
-    let productos = JSON.parse(localStorage.getItem('canasta')) || [];
+      this.shadowRoot.querySelector('.borrar').addEventListener('click',()=>{
+        let productos = JSON.parse(localStorage.getItem('canasta')) || [];
+        productos.splice(0);
+        localStorage.setItem('canasta',JSON.stringify(productos));
+        this.shadowRoot.querySelector('div').classList.toggle("modal")
+      this.shadowRoot.querySelector('span').textContent = 0;
+      })
 
-function esDispositivoMovil() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
+      this.shadowRoot.querySelector('svg').addEventListener('click',e=>{
+        this.shadowRoot.querySelector('div').classList.toggle("modal")
+        let productos = JSON.parse(localStorage.getItem('canasta')) || [];
 
-// Uso de la función para ejecutar una acción
-      this.shadowRoot.querySelector('section').innerHTML=""
-    if(productos.length!=0){
-    let url="Pedido:"
-    let total = 0;
-    productos.forEach(producto=>{
-      let li = document.createElement("p");
-      li.innerHTML=`nombre ${producto.nombre} - precio unitario: ${producto.precio} - cantidad: ${producto.cantidad} = ${producto.precio * producto.cantidad}`
-      this.shadowRoot.querySelector('section').appendChild(li)
-      total+=producto.precio*producto.cantidad;
-      url+=`%0A${producto.nombre}%28${producto.precio*producto.cantidad}%29`;
-    })
-      this.shadowRoot.querySelector('a').style.display="block"
-      //this.shadowRoot.querySelector('a').setAttribute("href","whatsapp://send?phone=+51990103105&text="+url+"%0A"+Math.floor(total.toFixed(2)));
-if (esDispositivoMovil()) {
-      this.shadowRoot.querySelector('a').setAttribute("href","whatsapp://send?phone=+51990103105&text="+url+"%0A"+total.toFixed(2));
-    // Aquí puedes ejecutar la acción que desees para dispositivos móviles
-} else {
-    // Aquí puedes ejecutar la acción que desees para escritorios
-      this.shadowRoot.querySelector('a').setAttribute("href","https://wa.me/+51990103105?text="+url+"%0A"+total.toFixed(2));
-}
+        function esDispositivoMovil() {
+          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
 
-    }else{
-      let li = document.createElement("li");
-      li.innerHTML="lista vacia";
-      this.shadowRoot.querySelector('section').innerHTML=""
-      this.shadowRoot.querySelector('section').appendChild(li)
-      this.shadowRoot.querySelector('a').style.display="none"
-    }
+        // Uso de la función para ejecutar una acción
+        this.shadowRoot.querySelector('tbody').innerHTML=""
+        if(productos.length!=0){
+          let url="Pedido:"
+          let totalCobrar = 0;
+          productos.forEach(producto=>{
+            let tr = document.createElement("tr");
+            let nombre = document.createElement("td");
+            let precio = document.createElement("td");
+            let cantidad = document.createElement("td");
+            let total = document.createElement("td");
+            nombre.innerHTML=producto.nombre;
+            precio.innerHTML=producto.precio;
+            cantidad.innerHTML=producto.cantidad;
+            total.innerHTML=producto.precio * producto.cantidad;
+            totalCobrar+=producto.precio*producto.cantidad;
+
+            tr.append(nombre,precio,cantidad,total)
+            this.shadowRoot.querySelector('tbody').appendChild(tr)
+            url+=`%0A${producto.nombre}%28${producto.precio*producto.cantidad}%29`;
+          })
+          let totalFinal = 0;
+  for (const producto of productos) {
+    totalFinal += producto.precio * producto.cantidad;
+  }
+            let tr = document.createElement("tr");
+            let nombrevacio = document.createElement("td");
+            let preciovacio = document.createElement("td");
+            let cantidadvacio = document.createElement("td");
+            let totalgeneral = document.createElement("td");
+            totalgeneral.textContent = totalFinal.toFixed(2);
+            tr.append(nombrevacio,preciovacio,cantidadvacio,totalgeneral)
+            this.shadowRoot.querySelector('tbody').appendChild(tr)
+
+          this.shadowRoot.querySelector('a').style.display="block"
+          if (esDispositivoMovil()) {
+            this.shadowRoot.querySelector('a').setAttribute("href","whatsapp://send?phone=+51990103105&text="+url+"%0ATotal= "+totalCobrar.toFixed(2));
+            // Aquí puedes ejecutar la acción que desees para dispositivos móviles
+          } else {
+            // Aquí puedes ejecutar la acción que desees para escritorios
+            this.shadowRoot.querySelector('a').setAttribute("href","https://wa.me/+51990103105?text="+url+"%0A"+totalCobrar.toFixed(2));
+          }
+
+        }else{
+          let li = document.createElement("li");
+          li.innerHTML="lista vacia";
+          this.shadowRoot.querySelector('section').innerHTML=""
+          this.shadowRoot.querySelector('section').appendChild(li)
+          this.shadowRoot.querySelector('a').style.display="none"
+        }
 
 
-  });
-  this.shadowRoot.querySelector('.cerrar-modal').addEventListener('click',e=>{
-    this.shadowRoot.querySelector('div').classList.toggle("modal")
-  })
+      });
+      this.shadowRoot.querySelector('.cerrar-modal').addEventListener('click',e=>{
+        this.shadowRoot.querySelector('div').classList.toggle("modal")
+      })
     }
 
 })
